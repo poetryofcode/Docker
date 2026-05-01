@@ -4,7 +4,9 @@ global.crypto = crypto;
 const http = require("http");
 const { MongoClient } = require("mongodb");
 
-const url = "mongodb://db:27017";
+const port = process.env.PORT || 3000;
+const url = process.env.URL || "mongodb://db:27017";
+
 const client = new MongoClient(url);
 
 async function start() {
@@ -30,8 +32,8 @@ async function start() {
     res.end("Use /add or /list");
   });
 
-  server.listen(3000, () => {
-    console.log("Server running on port 3000");
+  server.listen(port, () => {
+    console.log("Server running on port" + port);
   });
 }
 
