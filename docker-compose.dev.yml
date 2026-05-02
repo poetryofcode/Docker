@@ -1,0 +1,7 @@
+services:
+  app:
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: npx nodemon app.js

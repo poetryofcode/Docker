@@ -1,0 +1,6 @@
+services:
+  app:
+    environment:
+      PORT: 10000
+      URL: mongodb://db:27017
+    restart: always
